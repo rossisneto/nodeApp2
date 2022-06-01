@@ -19,6 +19,11 @@ app.set('views', __dirname+'/views')
 app.set('layout','layouts/layout') //Alterando a localização de layout.ejs
 app.use(expressLayouts)
 
+//Parse de dados html
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+
 //Importar router
 const indexRouter= require('./routes/indexRouter')
 
