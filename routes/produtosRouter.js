@@ -1,16 +1,17 @@
 const express = require('express')
 const router = express.Router()
 
+
 router.get('/camisetas', (req, res)=>{
-    res.end("Pagina de CAMISETAS")
+    res.render('produtos/camisetas')
 })
 
 router.get('/calcas', (req, res)=>{
-    res.end("Pagina de CALCAS")
+    res.render('produtos/calcas')
 })
 
 router.get('/sapatos', (req, res)=>{
-    res.end("Pagina de SAPATOS")
+    res.render('produtos/sapatos')
 })
 
 router.get('/sapatos/:id2', (req, res)=>{
