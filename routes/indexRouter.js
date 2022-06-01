@@ -19,25 +19,34 @@ router.get('/servicos', (req, res)=>{
     res.end("Pagina de SERVICOS")
 })
 
-/*
+
 router.get('/contato', (req, res)=>{
     res.end("Pagina de CONTATO")
 })
-*/
+
 
 router.post('/contato', (req, res)=>{
     //res.end("Pagina de CONTATO")
     let dados = JSON.stringify(req.body)
     //res.end(dados)
-    res.end(req.body.email)
-    
+    res.end(dados)
+
 
 })
 
-router.post('/receber', (req, res)=>{
-    
-    res.end("Pagina de RECEBER")
-    
+router.patch('/contato', (req, res)=>{
+    res.end("Pagina de CONTATO")
+})
+
+
+router.post('/imc', (req, res)=>{
+    let imc=req.body.peso/(req.body.altura*req.body.altura)
+    //res.end("O IMC calculado é:  "+imc)
+    res.render('imc/resultado',{'resultado':imc})  
+})
+
+router.get('/imc', (req, res)=>{
+    res.render('imc/formulario')    
 })
 
 module.exports = router
